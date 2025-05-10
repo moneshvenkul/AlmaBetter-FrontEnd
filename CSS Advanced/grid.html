@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 150px); /* 3 equal columns */
+      grid-template-rows: repeat(2, 100px);    /* 2 equal rows */
+      grid-gap: 15px;
+      justify-content: center;
+      align-content: center;
+      height: 400px;
+      border: 3px solid #000;
+      background-color: #f9f9f9;
+    }
+
+    .item {
+      background-color: skyblue;
+      text-align: center;
+      padding: 20px;
+      font-weight: bold;
+    }
+
+    .highlight {
+      grid-column: 1 / span 2; /* Occupies 2 columns */
+      grid-row: 1;             /* Stays in first row */
+      background-color: tomato;
+    }
+
+    .to-end {
+      grid-column: -1; /* Moves to last column */
+      background-color: lightgreen;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="item highlight">1 (span 2 columns)</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item to-end">4 (last column)</div>
+    <div class="item">5</div>
+  </div>
+
+</body>
+</html>

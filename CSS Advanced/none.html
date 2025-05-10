@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>None Display Example</title>
+<style>
+  .normal-box {
+    border: 1px solid purple;
+    padding: 10px;
+    margin: 5px;
+    background-color: lavender;
+    width: 100px;
+    height: 30px;
+    display: inline-block; /* Use inline-block to show space clearly */
+  }
+
+  .hidden-box {
+    /* Key setting */
+    display: none;
+    border: 1px solid gray; /* These styles will not be visible */
+    padding: 10px;
+    margin: 5px;
+    background-color: lightgray;
+    width: 100px;
+    height: 30px;
+  }
+
+  .container {
+    border: 1px dashed gray;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>None Display Example</h2>
+  <p>Observe how the middle box completely disappears and the other boxes close the gap.</p>
+  <div class="container">
+    <div class="normal-box">Box 1</div>
+    <div class="hidden-box">Box 2 (display: none)</div>
+    <div class="normal-box">Box 3</div>
+  </div>
+
+</body>
+</html>

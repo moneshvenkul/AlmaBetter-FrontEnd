@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inline-Block Display Example</title>
+<style>
+  .inline-block-box {
+    display: inline-block; /* Key setting */
+    border: 1px solid green;
+    padding: 10px;
+    margin: 10px; /* All margins (top, right, bottom, left) work */
+    background-color: lightgreen;
+    /* Width and height will be respected */
+    width: 100px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px; /* Center text vertically for this height */
+  }
+  .container {
+    border: 1px dashed gray;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Inline-Block Display Example</h2>
+  <div class="container">
+    This is some text before.<br>
+    <div class="inline-block-box">Box 1</div>
+    <div class="inline-block-box">Box 2</div>
+    <div class="inline-block-box">Box 3</div>
+    <br>This is some text after.
+  </div>
+
+</body>
+</html>

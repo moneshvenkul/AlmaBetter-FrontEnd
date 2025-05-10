@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Block Display Example</title>
+<style>
+  .block-box {
+    /* Default display for <div> is block, but explicitly setting for demo */
+    display: run-in; /* Key setting */
+    border: 1px solid red;
+    padding: 15px;
+    margin: 10px 0; /* 10px top/bottom margin, 0 left/right */
+    background-color: lightcoral;
+    /* Width and height are respected */
+    width: 80%; /* Example: taking 80% of parent width */
+    height: 70px;
+  }
+  .container {
+    border: 1px dashed gray;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Block Display Example</h2>
+  <div class="container">
+    <div class="block-box">Box 1</div>
+    <div class="block-box">Box 2</div>
+    <div class="block-box">Box 3</div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flexbox Properties Example</title>
+<style>
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+
+  /* Basic styling for all containers */
+  .flex-container {
+    display: flex; /* --- PARENT: Makes this a flex container --- */
+    border: 2px solid #007bff; /* Blue border */
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f8f9fa; /* Light grey background */
+    min-height: 80px; /* Give containers a minimum height */
+  }
+
+  /* Basic styling for all items */
+  .flex-item {
+    background-color: #28a745; /* Green */
+    color: white;
+    padding: 15px;
+    margin: 5px; /* Space between items */
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    min-width: 50px; /* Minimum width to see item size */
+  }
+
+  /* --- PARENT: flex-direction examples --- */
+  .container-row {
+    /* flex-direction: row; /* Default value */
+  }
+
+  .container-column {
+    flex-direction: column; /* Stack items vertically */
+    height: 200px; /* Give height to see column effect */
+  }
+
+   /* --- PARENT: flex-wrap example --- */
+  .container-wrap {
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    width: 300px; /* Give a fixed width to force wrapping */
+  }
+
+   /* --- PARENT: justify-content examples --- */
+  .container-justify-center {
+    justify-content: center; /* Align items center along the main axis (row) */
+  }
+
+  .container-justify-between {
+    justify-content: space-between; /* Distribute space between items along the main axis */
+  }
+
+  /* --- PARENT: align-items example --- */
+  .container-align-items-center {
+     /* flex-direction: row; is default */
+     align-items: center; /* Align items center along the cross axis (column) */
+     height: 100px; /* Give height to see vertical alignment */
+  }
+
+  .container-align-items-end {
+     align-items: flex-end; /* Align items to the end of the cross axis */
+     height: 100px;
+  }
+
+  /* --- PARENT: align-content example --- */
+  .container-align-content-between {
+     flex-wrap: wrap; /* Needed for align-content */
+     align-content: space-between; /* Distribute space between lines along the cross axis */
+     height: 200px; /* Needs sufficient height */
+     width: 250px; /* Needs fixed width to force wrapping into multiple lines */
+  }
+
+  /* --- CHILD: flex-grow / flex-shrink / flex-basis / flex shorthand examples --- */
+  .container-item-properties {
+      width: 400px; /* Fixed width to see growth/shrinkage */
+      justify-content: flex-start; /* Default */
+      flex-wrap: nowrap; /* Default - useful to see shrinking */
+  }
+
+  .item-grow-1 {
+    flex-grow: 1; /* Allows this item to grow and take available space */
+    background-color: #ffc107; /* Yellow */
+  }
+
+   .item-grow-2 {
+    flex-grow: 2; /* Allows this item to grow twice as much as grow-1 */
+    background-color: #dc3545; /* Red */
+  }
+
+   .item-no-shrink {
+       flex-shrink: 0; /* Prevents this item from shrinking */
+       flex-basis: 100px; /* Initial size is 100px */
+       background-color: #6f42c1; /* Purple */
+   }
+
+   .item-flex-shorthand {
+       /* flex: grow shrink basis */
+       flex: 1 1 80px; /* Can grow (1), can shrink (1), basis is 80px */
+       background-color: #17a2b8; /* Cyan */
+   }
+
+    .item-flex-auto {
+       flex: auto; /* Equivalent to flex: 1 1 auto */
+       background-color: #fd7e14; /* Orange */
+   }
+
+
+</style>
+</head>
+<body>
+
+  <h1>Flexbox Properties Example</h1>
+  <p>Observe how the "Flex Items" (green/colored boxes) arrange themselves based on the properties set on their "Flex Container" (blue dashed border).</p>
+
+  <h2>Parent: display: flex (Default behavior - row, nowrap, flex-start)</h2>
+  <div class="flex-container container-row">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+  <h2>Parent: flex-direction: column</h2>
+  <div class="flex-container container-column">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+  <h2>Parent: flex-wrap: wrap (Container fixed width)</h2>
+  <div class="flex-container container-wrap">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 6</div>
+  </div>
+
+   <h2>Parent: justify-content: center (Main axis alignment)</h2>
+  <div class="flex-container container-justify-center">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+  <h2>Parent: justify-content: space-between (Main axis distribution)</h2>
+  <div class="flex-container container-justify-between">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+   <h2>Parent: align-items: center (Cross axis alignment)</h2>
+  <div class="flex-container container-align-items-center">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2 (Tall Item)</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+   <h2>Parent: align-items: flex-end (Cross axis alignment)</h2>
+  <div class="flex-container container-align-items-end">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2 (Tall Item)</div>
+    <div class="flex-item">Item 3</div>
+  </div>
+
+  <h2>Parent: align-content: space-between (Multi-line cross axis distribution)</h2>
+  <p>This requires items to wrap onto multiple lines within the container.</p>
+  <div class="flex-container container-align-content-between">
+    <div class="flex-item">Item 1</div>
+    <div class="flex-item">Item 2</div>
+    <div class="flex-item">Item 3</div>
+    <div class="flex-item">Item 4</div>
+    <div class="flex-item">Item 5</div>
+    <div class="flex-item">Item 6</div>
+  </div>
+
+
+  <h2>Child: flex-grow, flex-shrink, flex-basis, flex shorthand</h2>
+  <p>This container has a fixed width. Items will grow or shrink based on available space and their properties.</p>
+  <div class="flex-container container-item-properties">
+    <div class="flex-item" style="background-color: gray;">Default</div>
+    <div class="flex-item item-grow-1">flex-grow: 1</div>
+    <div class="flex-item item-grow-2">flex-grow: 2</div>
+    <div class="flex-item item-no-shrink">flex-shrink: 0, basis: 100px</div>
+    <div class="flex-item item-flex-shorthand">flex: 1 1 80px</div>
+     <div class="flex-item item-flex-auto">flex: auto</div>
+  </div>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Inline Display Example</title>
+<style>
+  .inline-box {
+    /* Default display for <span> is inline, but explicitly setting for demo */
+    border: 1px solid blue;
+    padding: 10px; /* Padding will affect space around content horizontally */
+    margin: 20px;  /* Horizontal margin works, vertical margin does not */
+    background-color: lightblue;
+    /* Width and height will be ignored */
+    width: 100px;
+    height: 50px;
+  }
+  .container {
+    border: 1px dashed gray;
+    padding: 10px;
+  }
+</style>
+</head>
+<body>
+
+  <h2>Inline Display Example</h2>
+  <div class="container">
+    This is some text before the inline elements.
+    <span class="inline-box">Box 1 (inline)</span>
+    <span class="inline-box">Box 2 (inline)</span>
+    <span class="inline-box">Box 3 (inline)</span>
+    This is some text after the inline elements.
+  </div>
+
+</body>
+</html>
