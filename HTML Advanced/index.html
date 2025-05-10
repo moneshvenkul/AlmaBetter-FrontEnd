@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms and different inputs In HTML</title>
+</head>
+<body>
+    <h1>Forms and different inputs In HTML</h1>
+    <form action="https://google.co.in" method="GET">
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required placeholder="Enter your name"><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="DOB">Date of Birth:</label><br>
+        <input type="date" id="DOB" name="DOB"><br><br>
+
+        <label for="phone">Phone Number:</label><br>
+        <input type="tel" id="phone" name="phone"><br><br>
+
+        <label for="gender">Gender:</label><br>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Male</label><br>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Female</label><br>
+        <input type="radio" id="other" name="gender" value="other">
+        <label for="other">Other</label><br><br>
+
+        <label for="hobbies">Hobbies:</label><br>
+        <input type="checkbox" id="reading" name="hobbies" value="reading">
+        <label for="reading">Reading</label><br>
+        <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+        <label for="traveling">Traveling</label><br>
+        <input type="checkbox" id="music" name="hobbies" value="music">
+        <label for="music">Music</label><br><br>
+
+        <label for="address">Address:</label><br>
+        <textarea id="address" name="address" rows="4" cols="40"></textarea><br><br>
+
+        <label for="food">Food:</label><br>
+        <select id="food" multiple name="food">
+            <option value="western">Western</option>
+            <option value="india">Indian</option>
+            <option value="Chinese">Chinese</option>
+        </select><br><br>
+
+        <label for="file">Upload File:</label><br>
+        <input type="file" id="file" name="file"><br><br>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button><br><br>
+    </form>
+</body>
+</html>
+
+
+
+https://www.google.co.in/?name=test&email=test%40gmail.com&password=test&DOB=2025-05-20&phone=1234567891&gender=other&hobbies=reading&hobbies=traveling&hobbies=music&address=sadasdad&country=usa&file=images.jpg

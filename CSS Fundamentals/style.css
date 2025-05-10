@@ -1,0 +1,16 @@
+h1,p
+{
+    color:hsla(136, 85%, 10%,1); 
+    direction: rtl;
+}
+/* This is a h1 and P */
+
+button{
+    padding: 50px;
+    border:30px black;
+    margin: 100px;
+}
+
+body{
+    background-color: green;
+}
