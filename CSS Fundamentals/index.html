@@ -1,20 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-   
-    <title>CSS</title>
+  <style>
+    /* Descendant selector: selects all <p> inside <div> */
+
+    /* Child selector: selects only direct <h2> inside <section> */
+    section > h2 {
+      background-color: lightblue;
+    }
+
+    /* Immediate sibling selector: selects <h3> right after <div> */
+    div + h4 {
+      color: red;
+    }
+
+    /* General sibling selector: selects all <h4> after <div> */
+
+
+    div p:first-of-type {
+      color: orange;
+    }
+
+
+  </style>
 </head>
 <body>
-    <h1>This is CSS Almabetter Class</h1> 
-    <h3>This is h3</h3>
-    <h4>This is h4</h4>
-    <p>This is a P1 tag</p> 
-    <p tag="monesh">This is a P2 tag</p> 
-    <p>This is a P3 tag</p> 
-    <h1>CSS</h1>
-    <button>Click me</button>
+
+  <div>Div before many siblings</div>
+  <h4>First H4 (general sibling)</h4>
+  <h4>Not selected</h4>
+  <h4>Second H4 (general sibling)</h4>
+
 </body>
 </html>
