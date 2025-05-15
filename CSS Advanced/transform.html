@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Transform Example</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 30px;
+    }
+
+    .box {
+      width: 120px;
+      height: 120px;
+      background-color: steelblue;
+      color: white;
+      text-align: center;
+      line-height: 120px;
+      font-family: Arial;
+      margin: 20px;
+      border-radius: 10px;
+      transition: transform 0.5s ease;
+    }
+
+    .box:hover {
+      cursor: pointer;
+    }
+
+    /* Individual transform examples */
+    .translate:hover {
+      transform: translate(50px, 20px);
+    }
+
+    .rotate:hover {
+      transform: rotate(45deg);
+    }
+
+    .scale:hover {
+      transform: scale(1.5);
+    }
+
+    .skew:hover {
+      transform: skew(20deg, 10deg);
+    }
+
+    .combo:hover {
+      transform: rotate(15deg) scale(1.2);
+    }
+  </style>
+</head>
+<body>
+  <h2 style="text-align:center">CSS Transform Examples</h2>
+  <div class="container">
+    <div class="box translate">Translate</div>
+    <div class="box rotate">Rotate</div>
+    <div class="box scale">Scale</div>
+    <div class="box skew">Skew</div>
+    <div class="box combo">Combo</div>
+  </div>
+</body>
+</html>

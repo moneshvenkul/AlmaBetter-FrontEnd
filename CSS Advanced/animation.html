@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS Animation Example</title>
+  <style>
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+      margin: 100px auto;
+      text-align: center;
+      line-height: 100px;
+      font-family: Arial, sans-serif;
+      color: white;
+      font-weight: bold;
+      border-radius: 10px;
+
+      /* Animation shorthand */
+      animation: monesh 10s ease-in-out 1s infinite alternate;
+    }
+
+    /* Keyframes */
+    @keyframes monesh {
+      0% {
+        transform: translateY(0);
+        background-color: tomato;
+      }
+      10% {
+        transform: translateY(-50px);
+        background-color: orange;
+      }
+      23% {
+        transform: translateY(0);
+        background-color: yellow;
+      }
+
+      50% {
+        transform: translateY(-50px);
+        background-color: green;
+      }
+
+      100% {
+        transform: translateY(0);
+        background-color: blue;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="box">Bounce</div>
+</body>
+</html>

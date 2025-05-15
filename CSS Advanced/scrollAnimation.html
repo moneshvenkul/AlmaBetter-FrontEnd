@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll Animation</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            height: 2000px;
+            background-color: white;
+        }
+
+        .box{
+            width: 200px;
+            height: 200px;
+            margin: 1500px auto;
+            background-color: green;
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+
+            opacity: 0;
+            transform: translateY(200px);
+            transition: all 5s ease;
+        }
+
+        .box.show{
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+    </style>
+</head>
+<body>
+    <div class="box" id="scrollBox">AlmaBetter</div>
+
+    <script>
+        const box = document.getElementById("scrollBox");
+
+        function checkScroll(){
+            const boxTop = box.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if(boxTop<windowHeight-100){
+                box.classList.add("show")
+            }
+        }
+
+        window.addEventListener("scroll",checkScroll)
+        window.addEventListener("load",checkScroll)
+    </script>
+    
+</body>
+</html>
