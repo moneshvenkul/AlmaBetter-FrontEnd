@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="main-title">Welcome</h1>
+    <p class="desc">This is a sample paragraph.</p>
+    <p class="desc highlight">This is another paragraph.</p>
+    <button onclick="changeColor()">Click me</button>
+
+    <script>
+      const para = document.getElementsByTagName('p');
+      para[0].style.color = 'red'; 
+
+
+      function changeColor(){
+        document.getElementsByTagName('p')[0].style.color = 'black'; // Changes first paragraph color
+      }
+
+    </script>
+  </body>
+</html>

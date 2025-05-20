@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Say Hello</title>
+</head>
+<body>
+  <h2 id="greet">Hello, Customer!</h2>
+  <input type="text" id="nameInput" placeholder="Enter your name">
+  <button onclick="sayHello()">Submit</button>
+
+  <script>
+    function sayHello() {
+      const name = document.getElementById('nameInput').value;
+      if (name.trim() !== '') {
+        document.getElementById('greet').textContent = 'Hello, ' + name + '!';
+      } else {
+        document.getElementById('greet').textContent = 'Hello, Customer!';
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h2 id="header">DOM Example</h2>
+    <p class="desc">This is a paragraph.</p>
+    <p class="desc">This is another paragraph.</p>
+    <div name="specialDiv">Special div</div>
+    <button id="btn">Change Text</button>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+    </ul>
+    
+    <script>
+      // 1. getElementById
+      const header = document.getElementById('header');
+      header.style.color = 'blue';
+
+      // 2. getElementsByClassName
+      const descs = document.getElementsByClassName('desc');
+      descs[0].style.fontWeight = 'bold';
+
+      // 3. getElementsByTagName
+      const listItems = document.getElementsByTagName('li');
+      listItems[1].style.backgroundColor = 'yellow';
+
+      // 4. getElementsByName
+      const specialDivs = document.getElementsByName('specialDiv');
+      specialDivs[0].style.border = '1px solid green';
+
+      // 5. querySelector
+      const firstPara = document.querySelector('.desc');
+      firstPara.innerText = 'Changed by querySelector!';
+
+      // 6. querySelectorAll
+      const allDescs = document.querySelectorAll('.desc');
+      allDescs.forEach(el => el.style.fontSize = '20px');
+
+      // 7. createElement, appendChild, removeChild
+      const newLi = document.createElement('li');
+      newLi.textContent = 'New Item';
+      document.querySelector('ul').appendChild(newLi);
+
+      // Remove the first li
+      const ul = document.querySelector('ul');
+      const liToRemove = ul.children[0];
+      ul.removeChild(liToRemove);
+
+
+      // 9. setAttribute, getAttribute
+      header.setAttribute('monesh', 'hello');
+      alert(header.getAttribute('monesh')); // Shows "hello"
+    </script>
+  </body>
+</html>
