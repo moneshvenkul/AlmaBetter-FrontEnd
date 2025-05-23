@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Content Manipulation Example</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+  <script>
+    $(document).ready(function(){
+      // text(): get and set
+      var paraText = $('#demoPara').text();
+
+
+      console.log('Paragraph text:', paraText); // Get
+      $('#demoPara').text('Text updated using .text()'); // Set
+
+      // html(): get and set
+      var htmlContent = $('#demoHtml').html();
+      console.log('HTML content:', htmlContent); // Get
+      $('#demoHtml').html('<b>HTML updated using .html()</b>'); // Set
+
+      // append()
+      $('#demoHtml').append('<span> | Appended with .append()</span>');
+
+      // prepend()
+      $('#demoHtml').prepend('<span>Prepended with .prepend() | </span>');
+
+      // after()
+      $('#demoPara').after('<div style="color:green;">Inserted after with .after()</div>');
+
+      // before()
+      $('#demoPara').before('<div style="color:blue;">Inserted before with .before()</div>');
+    });
+  </script>
+</head>
+<body>
+  <p id="demoPara">Original paragraph text</p>
+  <div id="demoHtml">Original <i>HTML</i> content</div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery prop() Example</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <input type="checkbox" id="myCheckbox"> Check me<br><br>
+  <button id="checkBtn">Check the box</button>
+  <button id="showStateBtn">Show Checked State</button>
+
+  <script>
+    // Set the checkbox as checked when the button is clicked
+    $('#checkBtn').click(function() {
+      $('#myCheckbox').prop('checked', true);
+    });
+
+    // Show the checked state in the console
+    $('#showStateBtn').click(function() {
+      var isChecked = $('#myCheckbox').prop('checked');
+      console.log('Checkbox checked:', isChecked);
+      alert('Checkbox checked: ' + isChecked);
+    });
+  </script>
+</body>
+</html>

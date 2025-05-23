@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery toggleClass() Example</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .highlight {
+      background-color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <p id="myText">Click the button to highlight this text.</p>
+  <button id="toggleBtn">Toggle Highlight</button>
+
+  <script>
+    $('#toggleBtn').click(function() {
+      $('#myText').toggleClass('highlight');
+    });
+  </script>
+</body>
+</html>

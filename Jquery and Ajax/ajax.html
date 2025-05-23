@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery AJAX Load More Example</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h2>Posts</h2>
+  <div id="result"></div>
+  <button id="loadMoreBtn">Load More</button>
+
+  <script>
+    var start = 0;
+    var limit = 5;
+
+    function loadPosts() {
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/posts',
+        method: 'GET',
+        data: {
+          _start: start,
+          _limit: limit
+        },
+        success: function(data) {
+          data.forEach(function(post) {
+            $('#result').append(
+              '<div style="border-bottom:1px solid #ccc; margin-bottom:10px;">' +
+                '<h4>' + post.title + '</h4>' +
+                '<p>' + post.body + '</p>' +
+              '</div>'
+            );
+          });
+          start += limit;
+          // Hide the button if no more posts
+          if (start >= 100) {
+            $('#loadMoreBtn').hide();
+          }
+        },
+        error: function() {
+          $('#result').append('<p>Error loading posts.</p>');
+        }
+      });
+    }
+
+    // Load the first 5 posts on page load
+    $(document).ready(function() {
+      loadPosts();
+    });
+
+    // Load next 5 posts when button is clicked
+    $('#loadMoreBtn').click(function() {
+      loadPosts();
+    });
+  </script>
+</body>
+</html>
