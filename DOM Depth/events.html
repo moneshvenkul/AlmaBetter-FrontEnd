@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DOM Event Types Example</title>
+</head>
+<body>
+  <!-- Mouse Event -->
+  <button id="clickBtn">Click Me (Mouse Event)</button>
+
+  <!-- Keyboard Event -->
+  <input id="keyInput" type="text" placeholder="Type here (Keyboard Event)" />
+
+  <!-- Form Event -->
+  <form id="myForm">
+    <input name="username" placeholder="Form Event (submit)" />
+    <button type="submit">Submit</button>
+  </form>
+
+  <!-- Touch Event (mainly for mobile) -->
+  <button id="touchBtn">Touch Me (Touch Event)</button>
+
+  <script>
+    // Mouse event
+    document.getElementById('clickBtn').addEventListener('click', function() {
+      alert('Button was clicked! (click event)');
+    });
+
+    // Keyboard event
+    document.getElementById('keyInput').addEventListener('keydown', function(event) {
+      console.log('Key down: ' + event.key); // keydown event
+    });
+
+    // Form event
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+      e.preventDefault(); // Prevent form from submitting
+      alert('Form submitted! (submit event)');
+    });
+
+    // Touch event
+    document.getElementById('touchBtn').addEventListener('touchstart', function() {
+      alert('Touched! (touchstart event)');
+    });
+
+    if(user.subscribed) {
+      // Example of a condition to remove an event listener
+      document.getElementById('clickBtn').removeEventListener('click', function() {
+        alert('Button was clicked! (click event)');
+      });
+    }
+
+    document.getElementById('touchBtn').removeEventListener('touchstart', function() {
+      alert('Touched! (touchstart event)');
+    });
+  </script>
+</body>
+</html>

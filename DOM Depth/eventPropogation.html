@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Propagation Example</title>
+</head>
+<body>
+  <div id="parent" style="padding:30px; background: #d1e7dd;">
+    Parent Div
+    <button id="child" style="margin:20px;">Child Button</button>
+  </div>
+
+  <script>
+    // Parent event listener - capturing phase
+    document.getElementById('parent').addEventListener('click', function() {
+      alert('Parent Div clicked! (Capturing Phase)');
+    }, true); // true = capture phase
+
+    // Child event listener - bubbling phase (default)
+    document.getElementById('child').addEventListener('click', function() {
+      alert('Child Button clicked! (At Target & Bubbling Phase)');
+    });
+
+    // Parent event listener - bubbling phase (default)
+    document.getElementById('parent').addEventListener('click', function() {
+      alert('Parent Div clicked! (Bubbling Phase)');
+    }); // false = bubbling phase (default)
+  </script>
+</body>
+</html>

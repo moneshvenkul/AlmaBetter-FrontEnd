@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Example</title>
+  <script
+    src="https://code.jquery.com/jquery-3.7.1.js"
+    integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script>
+    $(document).ready(function(){
+      $("#hideBtn").click(function(){
+        $("#myPara").hide();
+      });
+    });
+  </script>
+</head>
+<body>
+  <button id="hideBtn">Hide Paragraph</button>
+  <p id="myPara">This is a paragraph that will be hidden when you click the button.</p>
+</body>
+</html>

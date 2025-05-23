@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Delegation Example</title>
+</head>
+<body>
+  <ul id="myList">
+    <li>Apple</li>
+    <li>Banana</li>
+    <li>Cherry</li>
+    <li>Dates</li>
+  </ul>
+
+  <script>
+    // Event delegation: Attach one click listener to the <ul>
+    document.getElementById('myList').addEventListener('click', function(event) {
+      // Check if a <li> was clicked
+      if (event.target && event.target.nodeName === 'LI') {
+        alert('You clicked on: ' + event.target.textContent);
+        event.target.style.background = "#ffeb3b"; // highlights the clicked item
+      }
+    });
+  </script>
+</body>
+</html>
