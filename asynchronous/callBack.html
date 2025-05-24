@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Callback Example</title>
+</head>
+<body>
+  <button id="fetchBtn">Fetch Data (Callback)</button>
+  <div id="output"></div>
+  <script>
+    function fetchData(monesh) {
+      setTimeout(() => {
+        monesh("Data fetched successfully (via callback)");
+      }, 5000);
+    }
+
+
+    document.getElementById('fetchBtn').onclick = function() {
+      fetchData(function(msg) {
+        document.getElementById('output').innerText = "Data fetched successfully (via callback)";
+      });
+    };
+
+
+  </script>
+</body>
+</html>

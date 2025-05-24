@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <button id="clickBtn">Click Me to understand Promises</button>
+    <div id="output"></div>
+
+    <script>
+    function fetchData() {
+      return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve("Hey this is the text after promise")
+                    },1000)
+            })
+    }
+
+    document.getElementById('clickBtn').onclick = async function() {
+      let msg = await fetchData();
+      document.getElementById('output').innerText = "Data fetched successfully (via callback)";
+    };
+    </script>
+    
+</body>
+</html>

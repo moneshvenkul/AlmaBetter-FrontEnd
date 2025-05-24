@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promises</title>
+</head>
+<body>
+    <button id="clickBtn">Click Me to understand Promises</button>
+    <div id="output"></div>
+
+    <script>
+        function monesh(){
+            return new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    if(Math.random()>0.5){
+                    resolve("Hey this is the text after promise")
+                    }
+                    else{
+                        reject("Hey it did not work")
+                    }
+                },1000)
+            })
+        }
+        document.getElementById('clickBtn').onclick=function(){
+            monesh().then(msg=>{
+                document.getElementById('output').innerText=msg;
+        }).then().then()
+        
+        
+        .catch(err=>{
+                document.getElementById('output').innerText=err;})
+        }
+    </script>
+    
+</body>
+</html>

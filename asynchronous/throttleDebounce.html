@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Throttle and Debounce Demo</title>
+  <style>
+    body { height: 2000px; padding: 20px; }
+    #log { position: fixed; top: 10px; left: 10px; background: #f0f0f0; padding: 10px; }
+  </style>
+</head>
+<body>
+  <div id="log">
+    <div><b>Scroll position (throttled):</b> <span id="scrollY"></span></div>
+    <div><b>Input (debounced):</b> <input id="inputBox" type="text"></div>
+    <div><b>Debounced Value:</b> <span id="debouncedVal"></span></div>
+  </div>
+
+  <script>
+    // Throttle function: runs fn at most once every 'delay' ms
+    function throttle(fn, delay) {
+      let last = 0; // Stores timestamp of last call
+      return (...args) => {
+        let now = Date.now();
+        if (now - last > delay) {
+          last = now;
+          fn(...args);
+        }
+      };
+    }
+
+    // Debounce function: runs fn only after 'delay' ms have passed since last call
+    function debounce(fn, delay) {
+      let t;
+      return (...args) => {
+        clearTimeout(t);
+        t = setTimeout(() => fn(...args), delay);
+      };
+    }
+
+    // Throttle scroll event
+    window.addEventListener('scroll',
+      throttle(() => {
+        document.getElementById('scrollY').textContent = window.scrollY;
+      }, 300)
+    );
+
+    // Debounce input event
+    document.getElementById('inputBox').addEventListener('input',
+      debounce((e) => {
+        document.getElementById('debouncedVal').textContent = e.target.value;
+      }, 500)
+    );
+  </script>
+</body>
+</html>
