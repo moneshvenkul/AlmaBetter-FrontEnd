@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, Navigate, useParams  } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link, Navigate, Outlet  } from 'react-router-dom';
 import "./App.css"
 
 function App2() {
@@ -11,8 +11,9 @@ function App2() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/abouts" element={<About />} >
-          <Route path=":about" element={<Contact />} />
+        <Route path="/about" element={<About />} >
+          <Route index element={<Contact />} />
+          <Route path="login" element={<Login />} />
         </Route>
         {/* Catch-all route */}
         <Route path="*" element={<Navigate to="/" />} />
@@ -26,12 +27,15 @@ function Home() {
 }
 
 function About() {
-  const { about } = useParams();
-  return <div>User ID: {about}</div>;
+  return <><div>About</div><Outlet /></>;
 }
 
 function Contact() {
   return <h1>Contact Page</h1>;
+}
+
+function Login() {
+  return <h1>Login Page</h1>;
 }
 
 export default App2;

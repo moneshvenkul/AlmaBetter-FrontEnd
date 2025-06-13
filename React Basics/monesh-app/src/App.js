@@ -70,23 +70,6 @@ function ShowEventDetails() {
 
 // 6. Event Binding in Class Component (.bind and Arrow Function)
 class BindingExample extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { count: 0 };
-    // Method 1: Explicit binding in constructor
-    this.handleClickBind = this.handleClickBind.bind(this);
-  }
-
-  handleClickBind() {
-    this.setState({ count: this.state.count + 1 });
-    alert("Clicked with .bind(this)");
-  }
-
-  // Method 2: Arrow function (auto-binds)
-  handleClickArrow = () => {
-    this.setState({ count: this.state.count + 1 });
-    alert("Clicked with arrow function");
-  };
 
   render() {
     return (
@@ -98,6 +81,13 @@ class BindingExample extends React.Component {
         <span style={{ marginLeft: 10 }}>Count: {this.state.count}</span>
       </div>
     );
+  }
+
+  constructor(props) {
+    super(props);
+    this.state = { count: 0 };
+    // Method 1: Explicit binding in constructor
+    this.handleClickBind = this.handleClickBind.bind(this);
   }
 }
 
