@@ -3,7 +3,7 @@ function Dinesh(props) {
     <div className="Dinesh">
         Dinesh's React App
         <p>Welcome to Dinesh's App.</p>
-        {props.authValue ? (
+        {props.sentValue ? (
             <p>You are authenticated.</p>
         ) : (
             <p>You are not authenticated.</p>

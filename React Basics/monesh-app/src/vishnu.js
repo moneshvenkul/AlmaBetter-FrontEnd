@@ -7,7 +7,9 @@ function Vishnu(monesh) {
     Vishnu's React App
     <p>Welcome to {name}.</p>
     <p>Age: {monesh.age}</p>
-    <Dinesh authValue={monesh.authValue} />
+
+    <Dinesh sentValue={monesh.authValue} />
+
     </div>
   );
 }
