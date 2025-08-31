@@ -1,22 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Say Hello</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM</title>
 </head>
 <body>
-  <h2 id="greet">Hello, Customer!</h2>
-  <input type="text" id="nameInput" placeholder="Enter your name">
-  <button onclick="sayHello()">Submit</button>
-
+  <p id="myElement" class="monesh"></p>
+  <button>click here</button>
   <script>
-    function sayHello() {
-      const name = document.getElementById('nameInput').value;
-      if (name.trim() !== '') {
-        document.getElementById('greet').textContent = 'Hello, ' + name + '!';
-      } else {
-        document.getElementById('greet').textContent = 'Hello, Customer!';
-      }
+    let element = document.querySelector("p");
+    element.innerHTML = "<b>Hello, DOM!</b>";
+    element.removeAttribute("class");
+    element.style.color = "blue";
+    element.style.fontSize = "20px";
+
+    element.classList.add("newClass");
+    element.classList.remove("monesh");
+
+    let button = document.querySelector("button");
+    button.onclick = () => {
+      element.classList.toggle("toggleClass");
     }
+
+    let newDiv = document.createElement("div");
+    newDiv.innerHTML = "This is a new div element.";
+
+    document.body.appendChild(newDiv);
+
+    document.body.removeChild(button);
+
+
   </script>
+  
 </body>
+
+<style>
+  .toggleClass {
+    background-color: yellow;
+  }
+</style>
 </html>

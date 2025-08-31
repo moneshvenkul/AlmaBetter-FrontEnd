@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "iron-session": "^8.0.4",
     "mongodb": "^6.17.0",
     "next": "15.3.4",
     "react": "^19.0.0",
@@ -21,6 +22,7 @@
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "cypress": "^14.5.1",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

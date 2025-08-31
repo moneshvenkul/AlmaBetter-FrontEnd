@@ -1,4 +1,11 @@
+
 import React, { useState } from "react";
+import Counter from "./Counter";
+import TodoList from "./TodoList";
+import ThemeSwitcher from "./ThemeSwitcher";
+import ModalExample from "./ModalExample";
+import DropdownSelect from "./DropdownSelect";
+import JokeFetcher from "./JokeFetcher";
 
 // 1. Click Event - Functional Component
 function ClickButton() {
@@ -151,6 +158,14 @@ export default function App() {
 
       {/* 7. Event Propagation & Bubbling */}
       <Parent />
+
+  {/* --- ENHANCED FUNCTIONALITIES BELOW --- */}
+  <Counter />
+  <TodoList />
+  <ThemeSwitcher />
+  <ModalExample />
+  <DropdownSelect />
+  <JokeFetcher />
 
       <div style={{ marginTop: 40, color: "#666" }}>
         <p>

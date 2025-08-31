@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Form</title>
+</head>
+<body>
+    <form action="">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" pattern="[A-Za-z]{3,}" title="Username must be at least 3 characters long and contain only letters." required>
+        <br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Please enter a valid email address." required>
+        <br><br>
+        <label for="phone">Phone Number:</label>
+        <input type=""text" id="phone" name="phone" pattern="\d{10}" title="Phone number must be 10 digits." required>
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <script>
+        document.querySelector('form').addEventListener('submit', function(event) {
+            const username = document.getElementById('username');
+            const email = document.getElementById('email');
+            const phone = document.getElementById('phone');
+            
+            const emailRegex = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
+            const phoneRegex = /^\d{10}$/;
+
+            if (!emailRegex.test(email.value)) {
+                alert('Please enter a valid email address.');
+                event.preventDefault();
+            }
+            else if (!phoneRegex.test(phone.value)) {
+                alert('Phone number must be 10 digits.');
+                event.preventDefault();
+            }
+            else {
+                alert('Form submitted successfully!');
+            }
+        });
+    </script>
+</body>
+</html>
